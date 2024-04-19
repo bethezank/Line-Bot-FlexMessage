@@ -3,8 +3,8 @@
 // Replace these with your actual values
 $channelId = "2004694757"; // Your LINE Messaging API channel ID
 $accessToken = "nUVRZW50QwxjESyC0xOp8VYqN1QJfoIf2PSzMuwXNrnlf71ioC1McAtf870A7hwZSPjFGuh7+FLjNSrzGqWv89/0RnB6RD+1n2QhwjC1Jaa7T00anqXZbHXuOIMWg+Ja//jQ1yZw9XRoA/wlp7EWswdB04t89/1O/w1cDnyilFU="; // Your LINE Messaging API access token
-// $userId = "Ubf5624686ef73f4365585736c0c1707c"; // The user ID to send the message to
-$userId = "Ceb81321e947581a11089dea3f92f4844"; // The user ID to send the message to
+// $userId = "Ubf5624686ef73f4365585736c0c1707c"; // user id
+$userId = "Ceb81321e947581a11089dea3f92f4844"; // group id
 
 // =========================================================================================================
 
