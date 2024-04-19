@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <title>Bethezank Lab</title>
+</head>
+
+<body>
+</body>
+
+<script>
+
+    const getInitialMessage = (id) => {
+
+        const initMessage = {
+            "type": "bubble",
+            "size": "mega",
+            "hero": {
+                "type": "image",
+                "size": "full",
+                "aspectRatio": "20:13",
+                "aspectMode": "cover",
+                "url": "https://bethezank.com/lab/reportPCS/uploads/1712643703/BTZ-1712643703-0.jpeg"
+            },
+            "body": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [{
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [{
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [{
+                            "type": "text",
+                            "text": "รอดำเนินการ",
+                            "size": "xs",
+                            "color": "#FFFFFF",
+                            "align": "center",
+                            "gravity": "center",
+                            "wrap": true,
+                            "style": "normal"
+                        }],
+                        "backgroundColor": "#DAA520",
+                        "cornerRadius": "md"
+                    },
+                    {
+                        "type": "filler"
+                    },
+                    {
+                        "type": "filler"
+                    }
+                    ],
+                    "cornerRadius": "md",
+                    "paddingAll": "none",
+                    "paddingStart": "none",
+                    "paddingEnd": "none",
+                    "spacing": "none"
+                },
+                {
+                    "type": "text",
+                    "text": `Hillhut [ id : ${id} ]`,
+                    "wrap": true,
+                    "weight": "bold",
+                    "size": "xl"
+                },
+                {
+                    "type": "separator"
+                },
+                {
+                    "type": "box",
+                    "layout": "baseline",
+                    "contents": [{
+                        "type": "text",
+                        "text": "โรงงาน : NK",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "sm",
+                        "flex": 0
+                    }]
+                },
+                {
+                    "type": "box",
+                    "layout": "baseline",
+                    "contents": [{
+                        "type": "text",
+                        "text": "ชิ้นงาน : WC213",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "sm",
+                        "flex": 0
+                    }]
+                },
+                {
+                    "type": "box",
+                    "layout": "baseline",
+                    "contents": [{
+                        "type": "text",
+                        "text": "Type : A",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "sm",
+                        "flex": 0
+                    }]
+                },
+                {
+                    "type": "box",
+                    "layout": "baseline",
+                    "contents": [{
+                        "type": "text",
+                        "text": "แปลง : A146",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "sm",
+                        "flex": 0
+                    }]
+                },
+                {
+                    "type": "box",
+                    "layout": "baseline",
+                    "contents": [{
+                        "type": "text",
+                        "text": "ประเภทของปัญหา : ออกแบบ",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "sm",
+                        "flex": 0
+                    }]
+                },
+                {
+                    "type": "box",
+                    "layout": "baseline",
+                    "contents": [{
+                        "type": "text",
+                        "text": "วันที่แจ้ง : 12/04/2567 - 12:54:28",
+                        "wrap": true,
+                        "weight": "bold",
+                        "size": "sm",
+                        "flex": 0
+                    }]
+                }
+                ]
+            },
+            "footer": {
+                "type": "box",
+                "layout": "vertical",
+                "spacing": "sm",
+                "contents": [{
+                    "type": "button",
+                    "action": {
+                        "type": "uri",
+                        "label": "ดูข้อมูล",
+                        "uri": "https://cutt.ly/Ow4ctaBK"
+                    },
+                    "style": "primary",
+                    "height": "sm"
+                },
+                {
+                    "type": "button",
+                    "style": "secondary",
+                    "height": "sm",
+                    "action": {
+                        "type": "uri",
+                        "label": "แชร์ข้อมูล",
+                        "uri": `https://liff.line.me/1657596432-AdWoz3MV?id=${id}`
+                    }
+                }
+                ]
+            }
+        }
+
+        return initMessage
+    }
+
+    (async () => {
+        await liff.init({
+            liffId: "1657596432-AdWoz3MV"
+        })
+        if (liff.isLoggedIn()) {
+            const queryString = window.location.search
+            const urlParams = new URLSearchParams(queryString)
+            const id = urlParams.get('id')
+            console.log(id)
+            await liff.shareTargetPicker([{
+                type: 'flex',
+                altText: 'รายการ Feedback รอดำเนินการ',
+                contents: getInitialMessage(id)
+            },]);
+        } else {
+            liff.login()
+        }
+
+    })()
+</script>
+
+</html>
