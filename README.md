@@ -4,6 +4,7 @@ fireFlex.php
 
 replyFlex.html
 เป็นไฟล์เอาไว้สำหรับรองรับการ share Flex Message ไปยังกลุ่มไลน์ หรือ user
+ซึ่งต้องไปตั้งค่า Endpoint URL ใน Line Liff
 
 หมายเหตุ
 ถ้ายิงเข้ากลุ่มไลน์ จำเป็นต้องหา group id มาก่อน
